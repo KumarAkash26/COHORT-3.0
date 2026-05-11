@@ -1,0 +1,201 @@
+@font-face {
+    font-family: Buguri;
+    src: url(./Buguri\ Slab.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x :hidden;
+    
+    
+}
+#bg{
+    width: 100%;
+    filter: blur(5px);
+    transform: scale(1.05);
+    position: absolute;
+    
+    
+}
+#nav{
+    position: absolute;
+    display: flex;
+    text-decoration: none;
+    height: 12%;
+    width: 100%;
+    /* background-color: brown; */
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    
+    
+}
+
+#option{
+    
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    
+    
+
+}
+
+.opt{
+    color: white;
+    text-decoration: none;
+
+}
+#logo{
+    display: flex;
+    color: white;
+
+}
+#logoimg{
+    height: 30px;
+    margin-right: 6px;
+
+}
+.lo{
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+#maintext{
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    top: 50%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    
+    
+
+    
+    /* letter-spacing: 8px; */
+
+}
+h1{
+    font-size: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: Buguri;
+    letter-spacing: 8px;
+    
+
+    
+
+}
+#gen{
+    
+    display: flex;
+    justify-content: flex-end;
+    
+    
+    
+}
+
+#monkey{
+    position: absolute;
+    z-index: 1;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 8%;
+    
+}
+
+#bottombox{
+    
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+    top: 85%;
+    opacity: 0.999;
+    
+
+}
+#vision{
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    font-size: 50px;
+}
+
+#txt{
+    position: absolute;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65%;
+    display: flex;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 150px;
+}
+#mint{
+    position: absolute;
+    height: 120%;
+    z-index: 1;
+    
+}
+#mintbox{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 8%;
+    
+}
+
+#mintbox p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    position: absolute;
+    z-index: 1;
+    top: 57.4%;
+    font-size: 15px;
+
+}
+
+#line{
+    position: absolute;
+    height: 150%;
+    width: 75%;
+    bottom: 20%;
+    left: 12%;
+}
+
+#socimg{
+    height: 60px;
+    width: 100px;
+}
+
+#join{
+    position: absolute;
+    top: 15%;
+}
+#Gen{
+    position: absolute;
+    bottom:15%;
+    left: 65%;
+}
