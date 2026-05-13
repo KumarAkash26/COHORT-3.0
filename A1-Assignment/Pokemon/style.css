@@ -131,9 +131,10 @@ p{
     
 }
 #sImage{
-    height: 40%;
+    height: 25%;
     position: absolute;
-    top: 77%;
-    opacity: 0.1;
+    top: 80%;
+    left: 5%;
+    opacity: 0.5;
     
 }
