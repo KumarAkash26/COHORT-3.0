@@ -241,13 +241,10 @@ main{
     left: 28%;
     border-radius: 25px;
 }
-.playicon{
-    color: #FA5D72;
-    font-size: 50px;
-    margin-bottom: 6px;
-    margin-left: 5px;
 
-   
+#playimg{
+    height: 40px;
+    margin-left: 6px;
 }
 .plays{
     display: flex;
@@ -645,4 +642,8 @@ main{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+hr{
+    opacity: 0.5;
 }
