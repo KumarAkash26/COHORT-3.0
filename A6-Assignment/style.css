@@ -1,3 +1,17 @@
+@font-face {
+    font-family: reckless;
+    src: url(./fonts/RecklessCondensedS-TRIAL-Book.woff);
+}
+
+@font-face {
+    font-family: figree;
+    src: url(./fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
+
+@font-face {
+    font-family: midnight;
+    src: url(./fonts/midnight-sans-rd-12-semibold-trial.otf);
+}
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +20,7 @@
 html, body{
     height: 100%;
     width: 100%;
+    font-family: reckless;
 }
 main{
     width: 100%;
@@ -85,16 +100,27 @@ nav .nav-part-2{
     /* font-family: ; */
     font-weight: 400;
     color: white;
+    padding: 1rem;
+    text-align: center;
 }
 #section-1 button{
+    width: 95%;
     padding: 1.2rem;
     border: none;
     background-color: #2A2857;
     color: white;
-    /* font-family: ; */
-    border-radius: 1.2rem;
+    font-family: midnight;
+    border-radius: 25rem;
     font-size: 1.1rem;
 }
+#section-1 button:hover{
+    background-color: white;
+    color: #2A2857;
+    border: 2px solid #2A2857;
+    transition: all 0.3s ease-in;
+}
+
+
 #section-2{
     width: 100%;
     padding: 8rem 1rem;
@@ -109,27 +135,49 @@ nav .nav-part-2{
 .section2-text h1{
     font-size: clamp(2.2rem,5vw,4rem);
     font-weight: 300;
-    width: 80%;
+    width: 50%;
     text-align: center;
 }
-#section-2>button{
-     padding: 0.1 rem 0.5rem;
+#section-2 button{
+     padding: 0.5rem 0.5rem;
      font-size: 3rem;
      font-family: midnight;
-     font-weight: 600;
+     font-weight: 900;
      background-color: #DAAEEA;
-     border-radius: 1.2rem;
+     border-radius: 0.8rem;
      text-transform: uppercase;
      margin-top: 5rem;
      rotate: -4deg;
      letter-spacing: 2px;
+     margin-left: 2rem;
+     
 }
 #section-2 .card-container{
     width: 100%;
     padding: 2rem 0 ;
 }
-.card{
+
+.card-container{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    overflow-x: auto; 
+    position: relative;
+    padding: 2.5rem;
+    margin-top: -5rem;
+}
+.card-main{
     width: 80%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.card{
+    width: 100%;
     height: 90vh;
     background-color: #C1EE90;
     position: relative;
@@ -140,21 +188,27 @@ nav .nav-part-2{
     justify-content: space-between;
     border: 2px solid black;
     border-radius: 1rem;
+    
 }
 .card-top-text{
     width: 100%;
     display: flex;
     align-items: end;
     justify-content: space-between;
+    font-size: 1.5rem;
 
 }
 .card-top-text button{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 0.5rem;
     border: none;
     background-color: #FFFFFF;
+    font-size: 1.5rem;
+    text-transform: uppercase;
     /* color: white; */
     /* font-family: ; */
+    border: 1px solid black;
+    font-weight: 800;
 }
 .card img{
     width: 100%;
@@ -165,9 +219,222 @@ nav .nav-part-2{
     scale: 0.8;
 }
 
-@media (min-width:768px) {
+.card img:hover{
+    scale: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-btm-text{
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    padding: 1.0rem 1.3rem;
+    border-radius: 0.8rem;
 
 }
+.card-btm-text:hover{
+    background-color: #2A2857;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+.card-btm-text span{
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.card-text-bottom h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    /* font-family: figree; */
+}
+
+.card-text-bottom p{
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: figree;
+    opacity: 0.7;
+}
+
+.card-text-bottom h5{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-family: figree;
+    font-weight: 500;
+}
+
+.card-main:nth-child(2) .card{
+    background-color: #FFD884;
+}
+.card-main:nth-child(3) .card{
+    background-color: #B0E8C1;
+}
+.card-main:nth-child(4) .card{
+    background-color: #C1E4F8;
+}
+.card-main:nth-child(5) .card{
+    background-color: #C0E571;
+}
+.card-main:nth-child(6) .card{
+    background-color: #FFCB96;
+}
+.card-main:nth-child(7) .card{
+    background-color: #FFD1B8;
+}
+.card-main:nth-child(8) .card{
+    background-color: #CCE3FF;
+}
+.card-main:nth-child(9) .card{
+    background-color: #AEE0F9;
+}
+
+.dash_box{
+    /* background-color: #C1EE90; */
+    width: 100%;
+    display: flex;
+    /* height: 2rem; */
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0;
+
+
+}
+
+.dash_box hr{
+    width: 3.5rem;
+    height: 0.1rem;
+    margin: 0 0.3rem;
+    background-color: black;
+}
+
+.btn-exp{
+    padding: 1.5rem;
+    width: 50%;
+    background-color: #2A2857;
+    border-radius: 25rem;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 400;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+}
+
+.btn-exp:hover{
+    background-color: white;
+    color: #2A2857;
+    border: 2px solid #2A2857;
+    transition: all 0.3s ease-in;
+}
+
+.fullline1{
+    width: 100%;
+    height: 0.1rem;
+    background-color: black;
+    margin: 5rem 0;
+}
+
+.section-3{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.section-3 button{
+    padding: 0.5rem 0.5rem;
+     font-size: 4rem;
+     font-family: midnight;
+     font-weight: 900;
+     background-color: #FF7F31;
+     border-radius: 0.8rem;
+     text-transform: uppercase;
+     margin-top: 1rem;
+     rotate: -4deg;
+     /* letter-spacing: 2px; */
+     /* margin-left: 2rem; */
+     font-family: midnight;
+}
+
+.section-3 p{
+    font-size: 3rem;
+    /* margin-left: 2rem; */
+    margin-top: 3rem;
+}
+
+.section-3 input{
+    width: 100%;
+    font-size: 3rem;
+    border-radius: 1.8rem;
+    border: 1px solid black;
+    margin-top: 4rem;
+    padding: 2.5rem 4rem;
+    background-color: transparent;
+}
+
+.section-3 input::placeholder{
+    opacity: 0.5;
+}
+
+.section-3 #vibe-text{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: figtree;
+    margin-bottom: 1rem;
+}
+
+.section-3 .blue-btn{
+    background-color:#d7e8ff;
+    rotate: 0deg;
+    padding: 0.5rem 2rem;
+    border-radius: 1.5rem;
+    text-transform: none;
+    font-family: reckless;
+    font-weight: 300;
+    margin-left: 0.7rem;
+}
+
+.section-3 .blue-btn:hover{
+    background-color: #A2C9FC;
+    transition: all 0.3s ease-in-out;
+}
+.section-4{
+    width: 100%;
+    height: 300vh;
+    background-color: #419dff;
+    margin-top: 7rem;
+    
+    
+}
+
+.section-4 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-4 .kettle{
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    left: 0;
+}
+
+
+
+
+
+@media (min-width:768px){
+
+}
+
 @media (min-width:1024px) {
 
     nav{

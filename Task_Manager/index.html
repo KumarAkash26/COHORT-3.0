@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body data-theme="light">
+    <main class="main">
+
+        <header>
+            <div class="logobox">
+                <div class="logo"><span class="dot"></span> Task Manager
+                </div>
+                <button class="togbtn" type="button">
+                    <span class="sp-toggle">Toggle dark mode</span>
+                    <i id="lighticon" class="ri-sun-fill"></i>
+                </button>
+            </div>
+            
+            <h1>What's on the page today.</h1>
+        </header>
+        <hr>
+        
+        
+        <section class="section-1">
+            <div class="stats">
+                <div class="stat pending">
+                    <span class="num" id="statPending">0</span>
+                    <span class="label">Pending</span>
+                </div>
+                <div class="stat completed">
+                    <span class="num" id="statDone">0</span>
+                    <span class="label">Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="num" id="statTotal">0</span>
+                    <span class="label">Total</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <form type="text" id="taskForm">
+                <input type="text" id="taskInput" placeholder="Enter a task">
+                <div class="selectmenu">
+                    <select id="taskPriority">
+                        <option disabled selected>Category</option>
+                        <option value="low">Low</option> 
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit" id="btn">Add Task</button>
+            </form> 
+        </section>    
+
+        <div class="filter-row">
+            <button class="chip active" data-filter="All">All</button>
+            <button class="chip" data-filter="HTML"><span class="swatch" ></span>HTML</button>
+            <button class="chip" data-filter="CSS"><span class="swatch" ></span>CSS</button>
+            <button class="chip" data-filter="JavaScript"><span class="swatch"></span>JavaScript</button>
+
+            <div class="spacer"></div>
+            <button class="text-link" id="clearFilters">Clear filter</button>
+            <button class="text-link" id="clearAll">Clear all tasks</button>
+
+        </div>
+
+        <div class="list-section">
+            <div class="list-heading" id="list-pen">Pending</div>
+            <ul class="tasks" id="pendingList"></ul>
+
+            <div class="list-heading" id="list-com">Completed</div>
+            <ul class="tasks" id="completedList"></ul>
+
+            <div class="empty" id="emptyState">
+                <span class="big">Nothing here yet.</span>
+                Add your first task above to start the list.
+            </div>
+        </div>
+
+       <div class="taskslist">
+            
+       </div>
+
+        <div class="Event-Propagation">
+            <h3>Event Propagation Demo</h3>
+            <p><strong>Event Propagation</strong> is the process by which an event travels through the DOM tree, moving from parent to child (<b>capturing phase</b>) and then from child to parent (<b>bubbling phase</b>).
+            </p>
+
+            <div class="boxdia">
+                <div class="grandparent">Grandparent
+                    <div class="parent">Parents
+                        <div class="child">Child</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-event">
+                <button class="capture">Capturing Phase</button>
+                <button class="bubble">Bubbling Phase</button>
+            </div>
+            
+                
+            <div class="flowBDCP">
+                <div class="flowBox">Grandparent</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="flowBox">Parent</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="flowBox">Child</div>
+            </div>   
+            
+            <div class="flowBDBP">
+                <div class="flowBox">Child</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="flowBox">Parent</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="flowBox">Grandparent</div>
+            </div> 
+
+        </div>
+    
+        <div class="Rendering-Pipeline">
+            <h3>Browser Rendering Pipeline</h3>
+            <p>The browser converts HTML, CSS, and JavaScript into pixels on the screen through the steps Parse → DOM/CSSOM → Render Tree → Layout → Paint → Composite.</p>
+
+            <div class="flow-dia">
+                <div class="pipline">HTML</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">Parsing</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">Tokenization</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">DOM Tree</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">CSS</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">CSSOM Tree</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">DOM Tree + CSSOM Tree</div>
+                <i class="ri-arrow-down-long-fill"></i>
+                <div class="pipline">Render Tree</div>
+            </div>
+        </div>
+    
+    
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
