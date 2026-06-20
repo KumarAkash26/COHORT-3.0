@@ -20,19 +20,30 @@ const bubble = document.querySelector(".bubble");
 const flowBDCP = document.querySelector(".flowBDCP");
 const flowBDBP = document.querySelector(".flowBDBP");
 
+const pendingList = document.querySelector("#pendingList");
+const completedList = document.querySelector("#completedList");
+
+const listSection = document.querySelector(".list-section")
+
 
 const taskArr = [];
 
 let updateIndex = null;
 
 let ui = () => {
-    taskslist.innerHTML = "";
+    /* taskslist.innerHTML = ""; */
+
+    pendingList.innerHTML = "";
+    completedList.innerHTML = "";
+
     taskArr.forEach((elem, index) => {
-        taskslist.innerHTML += `<div class="taskbox">
+        const html = `<li class="taskbox" data-id="${elem.id}">
             <div class="cat-line"></div>
             <div class="task">
-                <div class="check"></div>
-                <div>
+                <div class="check ${elem.completed ? "done" : ""}">
+                    ${elem.completed ? '<i class="ri-check-line"></i>' : ""}
+                </div>
+                <div class="task-contain">
                     <p>${elem.task}</p>
                     <p>${elem.category}</p>
                 </div>
@@ -48,7 +59,14 @@ let ui = () => {
             </div>
             </div>
             
-        </div>`
+        </li>`
+
+        if (elem.completed) {
+            completedList.innerHTML += html;
+        } else {
+            pendingList.innerHTML += html;
+        }
+       
     })
 }
 
@@ -99,8 +117,7 @@ const updateTask = (id) => {
     updateIndex = taskArr.findIndex((elem) => elem.id === id) 
 
     form[0].value = tasks.task;
-    taskPriority.value = tasks.taskPriority;
-
+    taskPriority.value = tasks.category;
     
 };
 
@@ -126,30 +143,47 @@ const updateStats = () => {
         taskArea.style.display = "block";
         listpen.style.display = "none";
         listcom.style.display = "none";
+        
+        pendingList.style.display = "none";
+        completedList.style.display = "none";
     } else {
         taskArea.style.display = "none";
+
+        listpen.style.display = pending > 0 ? "block" : "none";
+        listcom.style.display = completed > 0 ? "block" : "none";
+
+        pendingList.style.display = pending > 0 ? "flex" : "none";
+        completedList.style.display = completed > 0 ? "flex" : "none";
     }
      
-    if (pending > 0) {
-        listpen.style.display = "flex";
-    } else {
-        listpen.style.display = "none";
-    }
-
-    if (completed > 0) {
-        listcom.style.display = "flex";
-    } else {
-        listcom.style.display = "none";
-    }
+    
 };
 
-taskslist.addEventListener("click", (e) => {
+listSection.addEventListener("click", (e) => {
     const checkBtn = e.target.closest(".check");
 
     if (!checkBtn) return;
 
-    checkBtn.style.background = "#c6eecc";
-    checkBtn.innerHTML = '<i class="ri-check-line"></i>';
+    const taskBox = checkBtn.closest(".taskbox");
+    
+    /* console.log(taskBox);
+    console.log(taskBox.dataset.id); */
+    
+    const taskId = Number(taskBox.dataset.id);
+    console.log(taskId);
+
+    const task = taskArr.find(t => t.id === taskId);
+    console.log(task);
+
+     
+    if (!task){
+        return;
+    } 
+    
+    task.completed = !task.completed;
+
+    ui();
+    updateStats();
 });
 
 capture.addEventListener("click", () => {
