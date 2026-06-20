@@ -272,7 +272,7 @@ hr{
 }
 
 .list-section{
-  margin-top:8px;
+  margin-top: 20px;
 }
 
 .list-heading{
@@ -702,3 +702,86 @@ ul.tasks{
   font-size: 13px;
   font-weight: 400;
 }
+
+body[data-theme="light"]{
+  background-color: white;
+  color: black;
+}
+body[data-theme="dark"]{
+  background-color: #282828;
+  color: white;
+}
+
+body[data-theme="dark"] #taskForm{
+    background-color: #1c1b1b;
+}
+
+body[data-theme="dark"] #taskInput{
+    background-color: #1c1b1b;
+    color: white;
+}
+
+body[data-theme="dark"] .logo p{
+    color: white;
+}
+body[data-theme="dark"] .chip{
+    color: white;
+    background: #1c1b1b;
+}
+body[data-theme="dark"] .filter-row button:nth-child(1){
+    color: white;
+    background: #1c1b1b;
+    border: 2px solid white;
+}
+
+body[data-theme="dark"] .text-link{
+  color: white;
+}
+body[data-theme="dark"] .list-heading{
+  color: white;
+}
+body[data-theme="dark"] .empty{
+  color: rgb(194, 194, 194);
+  background-color: #1c1b1b;
+}
+body[data-theme="dark"] .big{
+  color: white;
+  background-color: #1c1b1b;
+}
+body[data-theme="dark"] .Event-Propagation{
+  color: white;
+  background-color: #1c1b1b;
+}
+body[data-theme="dark"] .Rendering-Pipeline{
+  color: white;
+  background-color: #1c1b1b;
+}
+body[data-theme="dark"] .Rendering-Pipeline p{
+  color: rgb(194, 194, 194);
+}
+body[data-theme="dark"] .Event-Propagation p{
+  color: rgb(194, 194, 194);
+}
+body[data-theme="dark"] .btn-event button{
+  color: rgb(255, 255, 255);
+}
+body[data-theme="dark"] .task{
+  color: #1c1b1b;
+}
+
+.HTML{
+    background-color: #E8744A;
+}
+
+.DSA{
+    background-color: #5B8DBF;
+}
+
+.Aptitude{
+    background-color: #D9A52B;
+}
+
+.completed-line{
+    background-color: #4CAF50;
+}
+

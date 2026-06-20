@@ -23,7 +23,13 @@ const flowBDBP = document.querySelector(".flowBDBP");
 const pendingList = document.querySelector("#pendingList");
 const completedList = document.querySelector("#completedList");
 
-const listSection = document.querySelector(".list-section")
+const listSection = document.querySelector(".list-section");
+
+const togBtn = document.querySelector(".togbtn");
+const body = document.querySelector("body");
+const icon = document.querySelector("#lighticon");
+
+const catLine = document.querySelector(".cat-line")
 
 
 const taskArr = [];
@@ -38,7 +44,7 @@ let ui = () => {
 
     taskArr.forEach((elem, index) => {
         const html = `<li class="taskbox" data-id="${elem.id}">
-            <div class="cat-line"></div>
+            <div class="cat-line ${elem.completed ? "completed-line" : elem.category}"></div>
             <div class="task">
                 <div class="check ${elem.completed ? "done" : ""}">
                     ${elem.completed ? '<i class="ri-check-line"></i>' : ""}
@@ -63,6 +69,8 @@ let ui = () => {
 
         if (elem.completed) {
             completedList.innerHTML += html;
+           
+
         } else {
             pendingList.innerHTML += html;
         }
@@ -194,6 +202,23 @@ capture.addEventListener("click", () => {
 bubble.addEventListener("click", () => {
     flowBDCP.style.display = "none";
     flowBDBP.style.display = "flex";
+});
+
+togBtn.addEventListener("click", () => {
+    const presentThe = body.dataset.theme;
+
+    if(presentThe === "light"){
+        body.setAttribute("data-theme", "dark");
+        
+        icon.classList.remove("ri-sun-fill")
+        icon.classList.add("ri-moon-fill");
+    }
+    else{
+        body.setAttribute("data-theme", "light");
+
+        icon.classList.remove("ri-moon-fill");
+        icon.classList.add("ri-sun-fill");
+    }
 })
 
 

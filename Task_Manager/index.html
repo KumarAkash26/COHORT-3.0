@@ -15,7 +15,9 @@
 
         <header>
             <div class="logobox">
-                <div class="logo"><span class="dot"></span> Task Manager
+                <div class="logo">
+                    <span class="dot"></span>
+                    <p>Task Manager</p>
                 </div>
                 <button class="togbtn" type="button">
                     <span class="sp-toggle">Toggle dark mode</span>
@@ -49,11 +51,11 @@
             <form type="text" id="taskForm">
                 <input type="text" id="taskInput" placeholder="Enter a task">
                 <div class="selectmenu">
-                    <select id="taskPriority">
+                    <select title="no" id="taskPriority">
                         <option disabled selected>Category</option>
-                        <option value="low">Low</option> 
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                        <option value="WebDev">WebDev</option> 
+                        <option value="DSA">DSA</option>
+                        <option value="Aptitude">Aptitude</option>
                     </select>
                 </div>
                 <button type="submit" id="btn">Add Task</button>
@@ -62,9 +64,9 @@
 
         <div class="filter-row">
             <button class="chip active" data-filter="All">All</button>
-            <button class="chip" data-filter="HTML"><span class="swatch" ></span>HTML</button>
-            <button class="chip" data-filter="CSS"><span class="swatch" ></span>CSS</button>
-            <button class="chip" data-filter="JavaScript"><span class="swatch"></span>JavaScript</button>
+            <button class="chip" data-filter="WebDev"><span class="swatch" ></span>WebDev</button>
+            <button class="chip" data-filter="DSA"><span class="swatch" ></span>DSA</button>
+            <button class="chip" data-filter="Aptitude"><span class="swatch"></span>Aptitude</button>
 
             <div class="spacer"></div>
             <button class="text-link" id="clearFilters">Clear filter</button>
