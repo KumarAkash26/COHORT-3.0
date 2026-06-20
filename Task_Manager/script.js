@@ -31,8 +31,10 @@ const icon = document.querySelector("#lighticon");
 
 const catLine = document.querySelector(".cat-line")
 
+const clearAll = document.querySelector("#clearAll");
 
-const taskArr = [];
+
+const taskArr = JSON.parse(localStorage.getItem("tasks"));
 
 let updateIndex = null;
 
@@ -78,6 +80,8 @@ let ui = () => {
     })
 }
 
+
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -101,10 +105,19 @@ form.addEventListener("submit", (event) => {
     };
 
     if(updateIndex !== null){
-        taskArr[updateIndex] = obj;
+        taskArr[updateIndex] = /* obj; */ {
+            ...taskArr[updateIndex],  
+            task,
+            category,
+        };
         updateIndex = null;
+
+        taskbtn.textContent = "Add Task";
+        localStorage.setItem("tasks", JSON.stringify(taskArr));
+
     }else{
         taskArr.push(obj);
+        localStorage.setItem("tasks", JSON.stringify(taskArr));
     }
 
     
@@ -126,11 +139,14 @@ const updateTask = (id) => {
 
     form[0].value = tasks.task;
     taskPriority.value = tasks.category;
-    
+     
+    taskbtn.textContent = "Update Task";
 };
 
 const deleteTask = (index) => {
     taskArr.splice(index, 1);
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
+
     ui();
     updateStats();
     
@@ -167,6 +183,9 @@ const updateStats = () => {
     
 };
 
+ui();
+updateStats();
+
 listSection.addEventListener("click", (e) => {
     const checkBtn = e.target.closest(".check");
 
@@ -189,6 +208,7 @@ listSection.addEventListener("click", (e) => {
     } 
     
     task.completed = !task.completed;
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
 
     ui();
     updateStats();
@@ -209,16 +229,39 @@ togBtn.addEventListener("click", () => {
 
     if(presentThe === "light"){
         body.setAttribute("data-theme", "dark");
+
+        localStorage.setItem("theme", "dark");
         
         icon.classList.remove("ri-sun-fill")
         icon.classList.add("ri-moon-fill");
     }
     else{
         body.setAttribute("data-theme", "light");
+         
+        localStorage.setItem("theme", "light");
 
         icon.classList.remove("ri-moon-fill");
         icon.classList.add("ri-sun-fill");
     }
+});
+
+
+clearAll.addEventListener("click", () => {
+    if(!taskArr.length){
+        return;
+    }
+   
+    taskArr.length = 0;
+
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
+
+    ui();
+    updateStats();
+    
 })
 
+
+if(localStorage.getItem("theme")){
+    body.setAttribute("data-theme", localStorage.getItem("theme"));
+}
 

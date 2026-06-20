@@ -768,6 +768,9 @@ body[data-theme="dark"] .btn-event button{
 body[data-theme="dark"] .task{
   color: #1c1b1b;
 }
+body[data-theme="dark"] #btn{
+  background-color: #393939;
+}
 
 .HTML{
     background-color: #E8744A;
