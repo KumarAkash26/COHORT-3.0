@@ -135,7 +135,7 @@ Form.addEventListener("submit", (event) => {
         amount: Number(amount),
         date,
         category,
-        currency: "INR",
+        currency: currency.value,
     };
 
     transactionsArr.push(obj);
@@ -369,6 +369,9 @@ soutProfle.addEventListener("click", () => {
 
     localStorage.setItem("doSign", JSON.stringify(doSign));
     localStorage.removeItem("profNme");
+
+    transactionsArr.length = 0;
+    localStorage.removeItem("Transactions");
     
     btnpro();
     
