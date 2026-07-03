@@ -42,11 +42,18 @@ const usrNme = document.querySelector("#usrNme");
 const sProfle = document.querySelector("#sProfle");
 const soutProfle = document.querySelector("#s-outProfle");
 
-const transactionsArr = [];
+const transactionsArr = JSON.parse(localStorage.getItem("Transactions")) || [];
 
 let cashFlowChart;
 let currFltr = null;
-let doSign = false;
+let doSign = JSON.parse(localStorage.getItem("doSign")) || false;
+
+
+usrNme.value = localStorage.getItem("profNme") || "";
+currency.value = localStorage.getItem("currency") || "INR";
+
+const themeStr = localStorage.getItem("theme") || "light";
+body.setAttribute("data-theme", themeStr);
 
 
 let ui = () => {
@@ -132,6 +139,7 @@ Form.addEventListener("submit", (event) => {
     };
 
     transactionsArr.push(obj);
+    localStorage.setItem("Transactions", JSON.stringify(transactionsArr));
 
     ui();
     FormBox.style.display = "none";
@@ -148,6 +156,8 @@ const deleteTransaction = (id) => {
     if (index !== -1) {
         transactionsArr.splice(index, 1);
     }
+
+    localStorage.setItem("Transactions", JSON.stringify(transactionsArr));
     ui();
 };
 
@@ -221,6 +231,7 @@ deleteAll.addEventListener("click", () => {
     if(confirm("sb delete ho jayega bhai, kardu?"))
     transactionsArr.length = 0;
 
+    localStorage.setItem("Transactions", JSON.stringify(transactionsArr));
     ui();
 });
 
@@ -248,6 +259,7 @@ resetFlt.addEventListener("click", () => {
     ui();
 });
 
+
 const atbtn = (a) => {
     fltbtns.forEach((e) => {
         e.classList.remove("active");
@@ -255,21 +267,19 @@ const atbtn = (a) => {
     a.classList.add("active");
 }
 
+
 togBtn.addEventListener("click", () => {
     if(body.dataset.theme === "light"){
         body.setAttribute("data-theme", "dark");
-         
-        icon.classList.remove("ri-moon-line");
-        icon.classList.add("ri-sun-line");
-
-        
+       
+        localStorage.setItem("theme", "dark");
 
     }else{
         body.setAttribute("data-theme", "light");
-
-        icon.classList.remove("ri-sun-line");
-        icon.classList.add("ri-moon-line");
+       
+        localStorage.setItem("theme", "light");
     }
+    thmStr();
 });
 
 const rates = {
@@ -298,6 +308,7 @@ const currfatt = (amount) => {
 }
 
 currency.addEventListener("change", () => {
+    localStorage.setItem("currency", currency.value);
     ui();
 })
 
@@ -322,6 +333,12 @@ sProfle.addEventListener("click", () => {
 
     doSign = true;
     /* sigbtn.textContent = usrNme.value.trim(); */
+
+    localStorage.setItem("doSign", JSON.stringify(doSign));
+    localStorage.setItem("profNme", usrNme.value.trim());
+    localStorage.setItem("currency", currency.value);
+
+
     btnpro();
     
     prosting.style.display = "none";
@@ -333,7 +350,7 @@ sProfle.addEventListener("click", () => {
 
 const btnpro = () =>{
     if(doSign){
-        sigbtn.textContent = usrNme.value.trim();
+        sigbtn.textContent = usrNme.value.trim() || localStorage.getItem("profNme")
         sProfle.textContent = "Update Profile";
 
         soutProfle.style.display = "block";
@@ -349,6 +366,9 @@ const btnpro = () =>{
 soutProfle.addEventListener("click", () => {
     doSign = false;
     usrNme.value = "";
+
+    localStorage.setItem("doSign", JSON.stringify(doSign));
+    localStorage.removeItem("profNme");
     
     btnpro();
     
@@ -358,6 +378,21 @@ soutProfle.addEventListener("click", () => {
     ui();
 })
 
-/* currfatt(); */
+const thmStr = () => {
+    if (body.dataset.theme === "dark"){
+        icon.classList.remove("ri-moon-line");
+        icon.classList.add("ri-sun-line");
+    } 
+    else {
+        icon.classList.remove("ri-sun-line");
+        icon.classList.add("ri-moon-line");
+    } 
+}
 
+/* currfatt(); */
+thmStr();
+btnpro();
 ui();
+
+
+    
