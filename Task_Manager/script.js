@@ -34,7 +34,7 @@ const catLine = document.querySelector(".cat-line")
 const clearAll = document.querySelector("#clearAll");
 
 
-const taskArr = JSON.parse(localStorage.getItem("tasks"));
+const taskArr = JSON.parse(localStorage.getItem("tasks")) || [];
 
 let updateIndex = null;
 

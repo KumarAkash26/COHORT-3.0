@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body id="body" data-theme="light">
+    <main id="main">
+        <nav>
+            <div class="logobox">
+                <div class="logo">
+                    <span class="dot"></span>
+                    <p>Finance Tracker</p>
+                </div>
+                
+                <div class="btn-tog-in">
+                    <button class="togbtn">
+                        <span class="sp-toggle">Toggle button</span>
+                        <i id="lighticon" class="ri-moon-line"></i>
+                    </button>
+                    <button class="signing" id="sign-btn">
+                        <span class="sp-sign">sign in</span>
+                    </button>
+                </div>
+               
+            </div>
+        
+            <h1>Here's where your money has been moving.</h1>
+        
+        </nav>
+
+        <div class="section-1">
+            <h3 class="o-view">Overview</h3>
+            <button id="adbtn">
+                <i class="ri-add-fill"></i>
+                <span>Add Transaction</span>
+            </button>
+        </div>
+        
+
+        <div class="balance-sm">
+            <div class="cur-bal">
+                <div class="bal">
+                    <span class="dot"></span>
+                    <p>Current Balance</p>
+                </div>
+                <div class="value" id="balance">$0.00</div>
+            </div>
+
+            <div class="cur-bal">
+                <div class="bal">
+                    <span class="dot"></span>
+                    <p>Total Income</p>
+                </div>
+                <div class="value" id="income">$0.00</div>
+            </div>
+
+            <div class="cur-bal">
+                <div class="bal">
+                    <span class="dot"></span>
+                    <p>Total Expense</p>
+                </div>
+                <div class="value" id="expense">$0.00</div>
+            </div>
+
+            <div class="cur-bal">
+                <div class="bal">
+                    <span class="dot"></span>
+                    <p>Transactions</p>
+                </div>
+                <div class="value" id="transactionCount">0</div>
+            </div>
+        </div>
+        
+        <div class="chartcd">
+            <div class="chart-top">
+                <h3>Cash flow Chart</h3>
+            </div>
+            <div class="chartAr">
+                <canvas id="cashFlowChart"></canvas>
+            </div>
+        </div>
+
+        <div class="transaction-list">
+            <div class="filter-row">
+                <div class="filter-div">
+                    <button class="filter-btn active" id="fltAll">All Types</button>
+                    <button class="filter-btn" id="fltIncome">Income</button>
+                    <button class="filter-btn" id="fltExpense">Expense</button>
+                </div>
+                <div class="reset-div">
+                    <button class="reset-btn" id="resetFlt">Reset Filter</button>
+                    <button class="reset-btn" id="deleteAll">Delete All</button>
+                </div>
+            </div>
+            <div class="trans-body">
+               <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <tr>
+                        <!-- <td class="date-col">date</td>
+                        <td>description</td>
+                        <td><span class="cat-pill">category</span></td>
+                        <td>amount</td>
+                        <td><button class="delete-btn"><i class="ri-delete-bin-line"></i></button></td> -->
+                    </tr>
+                </tbody>
+                </table>
+                <div class="empty" id="emptyState">
+                <span class="big">Nothing here yet.</span>
+                <p>Add your first transaction above to start the list.</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-box">
+            <div class="add-trans-form">
+            <form>
+                <div class="title-close-btn">
+                    <h3 class="form-title">Add Transaction</h3>
+                    <i id="closebtn" class="ri-close-fill"></i>
+                </div>
+                <p id="type-label">Type</p>
+                <select name="transactionType" id="transactionType">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <p id="Description-label">Description</p>
+                <input type="text" id="Description" placeholder="Enter transaction description">
+
+                <div class="amount-date">
+                    <div class="amount">
+                        <p id="Amount-label">Amount</p>
+                        <input type="number" id="Amount">
+                    </div>
+                    <div class="date">
+                        <p id="Date-label">Date</p>
+                        <input type="date" id="Dte">
+                    </div>
+                    
+                </div>
+
+                <p id="Category-label">Category</p>
+                <select name="Category" id="Category" required>
+                    <option value="" selected disabled>Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Health">Health</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button id="save-btn" type="submit">Save Transaction</button>
+            </form>
+        </div>
+        </div>
+
+        <div class="prosting">
+            <div class="setbox">
+                <div class="proset">
+                    <h3>Profile Settings</h3>
+                    <i id="proClosebtn" class="ri-close-fill"></i>
+                </div>
+                
+                <p>Name</p>
+                <input type="text" id="usrNme" placeholder="Enter your name">
+
+                <p>Preferred Currency</p>
+                <select id="currency">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+
+                <button id="sProfle">Save Profile</button>
+                <button id="s-outProfle">SIGN OUT</button>
+                
+            </div>
+            
+        </div>
+        
+
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

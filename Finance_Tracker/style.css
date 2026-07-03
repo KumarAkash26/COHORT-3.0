@@ -1,0 +1,793 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: auto;
+    width: 100%;
+    background: #EFEFF4;
+}
+
+#main{
+    height: 100%;
+    /* width: 100%; */
+    max-width: 760px;
+    margin: 0 auto;
+    padding:64px 24px 120px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav{
+    width: 100%;
+
+}
+.logobox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.logo{
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color: #6B6864;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background: #301ef0cb;
+  display:inline-block;
+}
+
+.logobox i{
+  cursor: pointer;
+}
+
+.sp-toggle{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.togbtn{
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  
+}
+
+h1{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-size:clamp(30px, 2vw, 52px);
+  margin:10px 0 6px;
+  letter-spacing:-0.01em;
+}
+
+nav{
+  margin-bottom: 30px;
+}
+
+.signing{
+    padding: 5px  15px;
+    border-radius: 5px;
+    
+    background: transparent;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight:600;
+    cursor: pointer;
+    text-align: center;
+    transition: all .25s ease;
+}
+
+.signing:hover{
+    background: black;
+    color: #FFFFFF;
+}
+
+.btn-tog-in{
+    height: 20%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.o-view{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(30px, 2vw, 52px);
+    margin:10px 0 6px;
+    color: #3a3a3a;
+    
+}
+
+.section-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.section-1 button{
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    background-color: black;
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+
+}
+
+.section-1 button:hover{
+    background: rgb(41, 41, 41);
+}
+
+
+.balance-sm{
+    height: 50%;
+    width: 100%;
+    /* background: rgb(169, 165, 165); */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-top: 20px;
+
+    
+
+}
+
+.cur-bal{
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid rgb(232, 232, 232);
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+}
+.bal{
+    font-size:15px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: #6B6864;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    
+    
+}
+.bal .dot{
+    width:7px;
+    height:7px;
+    border-radius:25%;
+    background: #301ef0cb;
+    display:inline-block;
+}
+
+
+.value{
+    font-size: 30px;
+    color: #301ef0cb;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-weight: 700;
+
+}
+
+.balance-sm :nth-child(2) .dot{
+    background: #059669;
+    
+}
+
+.balance-sm :nth-child(3) .dot{
+    background: #DC2626;
+}
+
+.balance-sm :nth-child(4) .dot{
+    background: #6B7080;
+}
+
+.balance-sm :nth-child(2) .value{
+    color: #059669;
+    
+}
+.balance-sm :nth-child(3) .value{
+    color: #DC2626;
+    
+}
+.balance-sm :nth-child(4) .value{
+    color: #6B7080;
+    
+}
+
+.chartcd{
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+
+}
+
+.chartAr{
+    background: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.chart-top h3{
+    font-size: 24px;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(30px, 2vw, 52px)
+}
+
+.add-trans-form{
+    background : #FFFFFF;
+    padding: 24px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.add-trans-form h3{
+    font-size: 24px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(30px, 2vw, 52px)
+}
+
+.add-trans-form p{
+    font-size: 15px;
+    font-weight:500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+
+.add-trans-form select{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.add-trans-form input[type="text"]{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.add-trans-form input[type="number"]{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.add-trans-form input[type="date"]{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    
+}
+
+.amount-date{
+    display: flex;
+    /* justify-content:; */
+    align-items: center;
+    gap: 10px;
+    
+
+}
+
+.add-trans-form button{
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    background-color: black;
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.add-trans-form button:hover{
+    background: rgb(41, 41, 41);
+}
+
+.form-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.title-close-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.title-close-btn i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.transaction-list{
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.filter-row{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #e1e1e1;
+  color: #6B6864;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 20px;
+  transition: .15s;
+}
+
+.filter-btn:hover  { 
+    border-color: #301ef0cb; 
+    color: #301ef0cb; 
+}
+.filter-btn.active { 
+    background: #301ef0cb; 
+    border-color: #301ef0cb; 
+    color: #fff; 
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #6B6864;
+  font-weight: 600;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+tbody td{ 
+    padding: 11px 10px; 
+    border-bottom: 1px solid #e1e1e1; 
+    vertical-align: middle; 
+}
+tbody tr:last-child td {
+    border-bottom: none; 
+}
+tbody tr:hover{ 
+    background: #f9f9f9;
+ }
+ 
+ td.amount {
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+td.amount.income{ 
+    color: green; 
+}
+td.amount.expense{ 
+    color: red; 
+}
+
+td.date-col { 
+    color: #6B6864;
+    font-size: 13px; 
+    white-space: nowrap; 
+}
+
+.cat-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.delete-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #e1e1e1;
+  background: transparent;
+  color: #6B6864;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s ease;
+  margin-left: auto;
+}
+
+.delete-btn i{
+    opacity: 0.7;
+    transition: all .15s ease;
+}
+.delete-btn i:hover{
+    opacity: 1;
+}
+
+.delete-btn:hover { 
+    background: rgb(233, 107, 107); 
+    border-color: #e96b6b; 
+    color: #ffffff; 
+}
+
+.empty{
+    text-align: center; 
+    padding: 36px 12px; 
+    color: #6B6864; 
+    font-size: 14px; 
+}
+.empty .big { 
+    display: block; 
+    color: #000000; 
+    font-size: 20px; 
+    margin-bottom: 4px; 
+    font-weight: 600;
+}
+
+.reset-btn{
+    background: transparent;
+    border: 1px solid #e1e1e1;
+    color: #6B6864;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    transition: .15s;
+}
+
+.reset-btn:nth-child(1):hover  { 
+    border-color: rgb(45, 45, 45); 
+    color: rgb(45, 45, 45); 
+}
+
+.reset-btn:nth-child(2):hover  { 
+    border-color: #e96b6b; 
+    color: #e96b6b; 
+}
+
+body[data-theme="light"]{
+  background-color: #EFEFF4;
+  color: black;
+}
+body[data-theme="dark"]{
+  background-color: #282828;
+  color: white;
+}
+
+body[data-theme="dark"] .cur-bal{
+    background: #191919;
+    border: 2px solid #3a3a3a;
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+}
+body[data-theme="dark"] .chartcd{
+    background: #191919;
+    border: 2px solid #3a3a3a;
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+}
+body[data-theme="dark"] .chartAr{
+    background: #191919;
+    border: 2px solid #3a3a3a;
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+    
+}
+
+body[data-theme="dark"] .transaction-list{
+    background: #191919;
+    border: 2px solid #3a3a3a;
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+    
+}
+body[data-theme="dark"] .big{
+    color: #FFFFFF;
+    
+}
+body[data-theme="dark"] .logo p{
+    color: #FFFFFF;
+    
+}
+body[data-theme="dark"] .o-view{
+    color: #FFFFFF;
+    
+}
+body[data-theme="dark"] #adbtn{
+    color: black;
+    background: #FFFFFF;
+    transition: all .25s ease;
+    
+}
+
+body[data-theme="dark"] #adbtn:hover{
+    box-shadow: 0 0 10px #FFFFFF;
+    
+}
+body[data-theme="dark"] .togbtn{
+    border: 2px solid #FFFFFF;
+    background: #FFFFFF;
+    
+}
+
+body[data-theme="dark"] .togbtn:hover{
+    box-shadow: 0 0 5px #FFFFFF;
+    
+}
+body[data-theme="dark"] .signing{
+    border: 2px solid #FFFFFF;
+    background: #FFFFFF;
+    transition: all .25s ease;
+    
+}
+body[data-theme="dark"] .signing:hover{
+    color: black;
+    box-shadow: 0 0 5px #FFFFFF;
+    
+}
+
+
+body[data-theme="dark"] .add-trans-form{
+    background: #191919;
+    border: 2px solid #3a3a3a;
+    box-shadow:0 1px 2px rgba(28,27,26,0.04);
+}
+body[data-theme="dark"] #Description{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] #Amount{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] #Dte{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] #transactionType{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] #Category{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] #save-btn{
+    background: #000000;
+    border: 1px solid #303030;
+    transition: all .25s ease;
+    /* color: #6e6e6e; */
+}
+body[data-theme="dark"] #save-btn:hover{
+    box-shadow: 0 0 5px #535353;
+}
+
+body[data-theme="dark"] #transactionTableBody tr:hover{ 
+    background: #050505;
+ 
+}
+body[data-theme="dark"] .reset-btn:nth-child(1):hover  { 
+    border-color: #FFFFFF; 
+    color: rgb(0, 0, 0); 
+    background: #FFFFFF;
+}
+
+.togbtn:hover{
+    box-shadow: 0 0 5px #343434;
+    
+}
+
+.prosting{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.setbox{
+    background : #FFFFFF;
+    padding: 24px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.setbox h3{
+    font-size: 24px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(30px, 2vw, 52px)
+}
+
+.setbox p{
+    font-size: 15px;
+    font-weight:500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+
+.setbox select{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.setbox input[type="text"]{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.setbox #sProfle{
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    background-color: black;
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.setbox button:hover{
+    background: rgb(41, 41, 41);
+}
+
+.proset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.proset i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+body[data-theme="dark"] .setbox{
+    background: #191919;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] .setbox h3{
+    color: #ffffff;
+}
+body[data-theme="dark"] .setbox p{
+    color: #ffffff;
+}
+body[data-theme="dark"] .setbox select{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+body[data-theme="dark"] .setbox input{
+    background: #000000;
+    border: 1px solid #303030;
+    color: #6e6e6e;
+}
+
+body[data-theme="dark"] #sProfle{
+    background: #000000;
+    border: 1px solid #303030;
+    transition: all .25s ease;
+    /* color: #6e6e6e; */
+}
+body[data-theme="dark"] #s-outProfle{
+    background: #000000;
+    border: 1px solid #303030;
+    transition: all .25s ease;
+    margin-top: 10px;
+    /* color: #6e6e6e; */
+}
+body[data-theme="dark"] #sProfle:hover{
+    box-shadow: 0 0 5px #535353;
+}
+body[data-theme="dark"] #s-outProfle:hover{
+    box-shadow: 0 0 5px #535353;
+}
+
+.setbox #s-outProfle{
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    background-color: black;
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
