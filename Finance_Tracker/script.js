@@ -44,6 +44,8 @@ const soutProfle = document.querySelector("#s-outProfle");
 
 const transactionsArr = JSON.parse(localStorage.getItem("Transactions")) || [];
 
+const expbtn = document.querySelector("#Exportbtn")
+
 let cashFlowChart;
 let currFltr = null;
 let doSign = JSON.parse(localStorage.getItem("doSign")) || false;
@@ -392,6 +394,41 @@ const thmStr = () => {
     } 
 }
 
+const CSVexp = () => {
+    if(transactionsArr.length === 0){
+        alert("Transaction nhi hai..")
+        return;
+    }
+    let file = "id,Date,Description,Currency,Amount,Type\n";
+
+    transactionsArr.forEach((elem) => {
+        file += `${elem.id},${elem.date},${elem.description},${"INR"},${elem.amount},${elem.type.toUpperCase()}\n`;
+    });
+
+    console.log(file);
+
+    const blob = new Blob([file],{
+        type:"text/file"
+    })
+
+    const link = URL.createObjectURL(blob);
+    console.log(link)
+
+    const a = document.createElement("a");
+
+    a.href = link;
+    a.download = "Transactions.csv";
+    /* a.click(); */
+    a.click();
+
+    URL.revokeObjectURL(link);
+
+
+}
+
+expbtn.addEventListener("click", (CSVexp));
+
+/* CSVexp(); */
 /* currfatt(); */
 thmStr();
 btnpro();

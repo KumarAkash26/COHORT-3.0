@@ -791,3 +791,19 @@ body[data-theme="dark"] #s-outProfle:hover{
     display: none;
 }
 
+.adtr-exp{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+#Exportbtn{
+    transition: all .25s ease;
+}
+
+#Exportbtn:hover{
+    background: #000000;
+    box-shadow: 0 0 5px #535353;
+    
+}
+
