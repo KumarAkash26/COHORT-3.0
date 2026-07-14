@@ -1,0 +1,683 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    background: #171625;
+    
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px clamp(20px, 4vw, 48px);
+    border-bottom: 1px solid #21243570;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.clk-wet-tog{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#time{
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid #2b2f42;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    /* font-family: monospace; */
+    background-color: #171925;
+
+}
+#weather{
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid #2b2f42;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c7086;
+    font-size: 15px;
+    background-color: #171925;
+}
+.clk-time{
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.10em;
+}
+.clk-sec{
+    color: #6c7086;
+    
+}
+.clk-date{
+    font-size: 12px;
+    color: #6c7086;
+    border-left: 1px solid #2b2f42;
+    padding-left: 8px;
+}
+#togbtn{
+    border: 1px solid #6c7086;
+    padding: 5px 7px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#weather i{
+    font-size: 15px;
+}
+
+.section-1{
+    padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 48px) 64px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.cd-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.cd{
+    background: #171925;
+    padding: 22px 20px;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 12px 24px -14px rgba(0,0,0,0.55);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.cd::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(140px 90px at 85% -10%, #c97a2e1f, transparent 70%);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.cd:hover{
+  transform: translateY(-3px);
+  border-color: #e4ddcf80;
+  box-shadow: 0 20px 45px -22px rgba(30,25,15,0.25);
+}
+
+.cd:hover::after{
+    opacity: 1;
+}
+.cd:active{
+    transform: translateY(-1px);
+}
+
+.cd-icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2231;
+    color: #F2A541;
+    border: 1px solid #34353f;
+    font-size: 25px;
+
+}
+
+.cd-goal .cd-icon{
+    color: #428C88;
+}
+.cd-quote .cd-icon{
+    color: #428C88;
+}
+.cd-goal .cd-icon{
+    color: #428C88;
+}
+
+.cd-ttl{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.section-1 h1{
+    font-size: clamp(28px, 2.6vw, 36px);
+    font-weight: 600;
+    line-height: 1.15;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    max-width: 50vw;
+    
+}
+
+#weather i{
+    color: #F2A541;
+}
+
+.cd-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.todo-box{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.left-side{
+    height: 90%;
+    width: 90%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+
+}
+.adbtn{
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: 1px solid #34353f;
+    background: #11101c;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 12px 24px -14px rgba(0,0,0,0.55);
+    margin-top: 30px;
+}
+.adbtn:hover{
+    transform: translateY(-3px);
+    border-color: #e4ddcf80;
+    box-shadow: 0 20px 45px -22px rgba(30,25,15,0.25);
+}
+
+.todo-box hr{
+    rotate: calc(90deg);
+    position: absolute;
+    width: 80vh;
+    bottom: 50%;
+    opacity: 0.1;
+    height: 0.5px;
+    
+}
+
+.task-list{
+    height: 90%;
+    background-color: transparent;
+    position: absolute;
+    width: clamp(44%, 73vw, 73%);
+    right: 0;
+    top: 30px;
+    right: 30px;
+    padding: 30px;
+    
+}
+
+.task{
+    height: 10%;
+    background-color: #11101c;
+    border-radius: 10px;
+    border: 1px solid #34353f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+.task button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.taskin{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+.taskin::placeholder{
+    color:#aaa;
+}
+
+.cls{
+    height: 30px;
+    width: 30px;
+    background: #11101c;
+    border-radius: 50px;
+    border: 1px solid #34353f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+}
+
+.daily-plan{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.planbox{
+    height: 90%;
+    width: 90%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+}
+.plan{
+    /* height: 90%;
+    width: 100%; */
+    background-color: #171625;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.plan input{
+    height: 35px;
+    width: 40vw;
+    padding-left: 10px ;
+    margin-top: 5px;
+    background: #0b0b15;
+    border: 1px solid #2c2c2d;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+
+}
+
+.motiv{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.motivbox{
+    height: 50%;
+    width: 60%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+}
+
+.motivbox p{
+    color: #797979;
+    position: relative;
+    margin-top: 20px;
+    right: 0;
+
+}
+
+.timer{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.timerbox{
+    height: 70%;
+    width: 60%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+}
+
+.timerbox h2{
+    font-size: 200px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.tbtn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tbtn button{
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: 1px solid #34353f;
+    background: #11101c;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 12px 24px -14px rgba(0,0,0,0.55);
+    margin-top: 30px;
+    transition: all 0.25s ease;
+    
+}
+
+.tbtn button:hover{
+    background: #171625;
+}
+
+.weath{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.weatBox{
+    height: 60%;
+    width: 60%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+}
+
+.weattil{
+    font-size: 60px;
+    margin: 20px 0;
+    /* text-align: center; */
+}
+.weatmain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 50px;
+}
+
+.weatBox p{
+    color: #797979;
+    position: relative;
+    text-align: center;
+}
+
+.weathdts{
+    color: #797979;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.goalsec{
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35, 0.9);
+}
+
+.goalbox{
+    height: 60%;
+    width: 60%;
+    background-color: #171625;
+    border: 1px solid #34353f;
+    border-radius: 25px;
+    padding: 30px;
+    position: relative;
+}
+
+.goal-inp-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+#goalInput {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #33384d;
+    outline: none;
+    background: transparent;
+    color: white;
+    
+}
+
+#goalAddBtn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.goallist {
+    margin-top: 20px;
+}
+
+.goal-item {
+    padding: 14px;
+    border: 1px solid #33384d;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.goal-item h3 {
+    flex: 1;
+    font-size: 18px;
+}
+
+.goal-item.completed h3 {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.goal-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.goal-actions button {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dyimgbox{
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    opacity: 0.1;
+    
+    
+}
+#dynImage{
+    height: 460px;
+    
+}
+
+body[data-theme="light"] {
+    background-color: #f5f5f5;
+}
+
+body[data-theme="dark"] {
+    background-color: #0f0f17;
+    color: white;
+}
+
+body[data-theme="light"] main {
+    background-color: #666666;
+    
+}
+
+body[data-theme="light"] #time {
+    background-color: #3e3e3e;
+    border: 1px solid #777777;
+
+}
+
+body[data-theme="light"] #weather {
+    background-color: #3e3e3e;
+    border: 1px solid #777777;
+    color: rgb(185, 185, 185);
+
+}
+body[data-theme="light"] .clk-sec {
+    color: rgb(185, 185, 185);
+
+}
+body[data-theme="light"] .clk-date {
+    color: rgb(185, 185, 185);
+
+}
+
+body[data-theme="light"] .cd {
+    background-color: #3e3e3e;
+    border: 1px solid #777777;
+
+}
+body[data-theme="light"] .cd-icon {
+    background-color: #252525;
+    border: 1px solid #5e5e5e;
+
+}
+
+body[data-theme="light"] .left-side {
+    background-color: #3e3e3e;
+    border: 1px solid #666666;
+}
+body[data-theme="light"] .adbtn {
+    background-color: #202020;
+    border: 1px solid #4f4f4f;
+}
+body[data-theme="light"] .task {
+    background-color: #202020;
+    border: 1px solid #4f4f4f;
+}
+body[data-theme="light"] .cls {
+    background-color: #202020;
+    border: 1px solid #4f4f4f;
+}
+body[data-theme="light"] #goalInput {
+    background-color: #252525;
+    border: 1px solid #4f4f4f;
+}
+body[data-theme="light"] .goallst div {
+    background-color: #252525;
+    border: 1px solid #4f4f4f;
+}
+body[data-theme="light"] .tst {
+    background-color: #252525;
+    border: 1px solid #4f4f4f;
+    cursor: pointer;
+}
+body[data-theme="light"] #qt-a {
+    color: #a2a1a1;
+}
+
+body[data-theme="light"] .plan {
+    background-color: transparent;
+    border: none;
+}
+body[data-theme="light"] .in {
+    background-color: #252525;
+    border: 1px solid #4f4f4f;
+}
+
+body[data-theme="light"] nav {
+    background-color: #444444;
+    border: 1px solid #4f4f4f;
+}
+
+
+
+

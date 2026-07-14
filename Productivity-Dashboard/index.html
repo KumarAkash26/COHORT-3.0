@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="logo">
+                <i class="ri-24-hours-line"></i>
+                <h3>Productivity Dashboard</h3>
+            </div>
+            <div class="clk-wet-tog">
+                <div id="time">
+                    <span class="clk-time">09:41<span class="clk-sec">:07</span>
+                    </span>
+                    <span class="clk-date">Tue, Jul 7</span>
+                </div>
+                <div id="weather">
+                    <!-- <i class="ri-sun-cloudy-line"></i>
+                    <span>28°C · Dhanbad</span> -->
+                </div>
+                <div id="togbtn">
+                    <i class="ri-sun-line"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="section-1">
+            <h1>Everything you're working on, in one place.</h1>
+            <div class="cd-grid">
+                <div class="cd cd-todo">
+                    <div class="cd-icon">
+                        <i class="ri-todo-line"></i>
+                    </div>
+                    <span class="cd-ttl">Todo List</span>
+                </div>
+
+                <div class="cd cd-Plan">
+                    <div class="cd-icon">
+                        <i class="ri-calendar-2-line"></i>
+                    </div>
+                    <span class="cd-ttl">Daily Planner</span>
+                </div>
+
+                <div class="cd cd-quote">
+                    <div class="cd-icon">
+                        <i class="ri-chat-quote-line"></i>
+                    </div>
+                    <span class="cd-ttl">Motivation</span>
+                </div>
+
+                <div class="cd cd-pomo">
+                    <div class="cd-icon">
+                        <i class="ri-progress-2-line"></i>
+                    </div>
+                    <span class="cd-ttl">Pomodaro</span>
+                </div>
+
+                <div class="cd cd-weat">
+                    <div class="cd-icon">
+                        <i class="ri-cloudy-line"></i>
+                    </div>
+                    <span class="cd-ttl">Weather</span>
+                </div>
+
+                <div class="cd cd-goal">
+                    <div class="cd-icon">
+                        <i class="ri-focus-2-line"></i>
+                    </div>
+                    <span class="cd-ttl">Daily Goals</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="todo-box">
+            <div class="left-side">
+                <h1>Todo List --</h1>
+                <button class="adbtn">+ Add List</button>
+                <hr>
+                <div class="task-list">
+                    <!-- <div class="task">
+                        <h3>Task</h3>
+                        <button>Complete</button>
+                    </div> -->
+                </div>
+                <div class="cls" id="tocls"><i class="ri-close-line"></i></div>
+            </div>
+        </div>
+
+        <div class="daily-plan">
+            <div class="planbox left-side">
+                <h1>Daily Planning --</h1>
+                <div class="cls" id="daicls"><i class="ri-close-line"></i></div>
+                <div class="plan">
+                    <div>
+                        <h3>06:00 - 07:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>07:00 - 08:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>08:00 - 09:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>09:00 - 10:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>10:00 - 11:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>11:00 - 12:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>12:00 - 13:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>13:00 - 14:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+
+                    <div>
+                        <h3>14:00 - 15:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                    <div>
+                        <h3>15:00 - 16:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                    <div>
+                        <h3>16:00 - 17:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                    <div>
+                        <h3>17:00 - 18:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                    <div>
+                        <h3>18:00 - 19:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                    <div>
+                        <h3>19:00 - 20:00</h3>
+                        <input class="in" type="text" placeholder="Enter Plans..">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="motiv">
+            <div class="motivbox left-side">
+                <div class="cls" id="motivcls"><i class="ri-close-line"></i></div>
+                <div>
+                    <h1 id="qt-t">“Believe in yourself. You are braver than you think, more talented than you know, and capable of more than you imagine.”</h1>
+
+                    <p id="qt-a">― Roy T. Bennett, The Light in the Heart</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="timer">
+            <div class="timerbox left-side">
+                <h1>Timer --</h1>
+                <div class="cls" id="timercls"><i class="ri-close-line"></i></div>
+                <h2 class="ttime">30:00</h2>
+
+                <div class="tbtn">
+                    <button id="st-timer" class="tst">Start</button>
+                    <button id="so-Timer"class="tst">Stop</button>
+                    <button id="reTimer"class="tst">Reset</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="weath">
+            <div class="weatBox left-side">
+                <h1 class="weattil">Weather --</h1>
+                <div class="weatmain">
+                    <i id="weatherIcon" class="ri-sun-cloudy-line"></i>
+                    <h1 id="weatherTemp">--°C</h1>
+                </div>
+                <p id="weathCity">Current Location</p>
+                <p id="weathdes">Loading weather...</p>
+
+                <div class="weathdts">
+                    <div>
+                        <span>Humidity</span>
+                        <h3 id="weatHdy">--%</h3>
+                    </div>
+
+                    <div class="weathdts">
+                        <div>
+                            <span>Wind</span>
+                            <h3 id="weatWid">-- km/h</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cls" id="weatcls"><i class="ri-close-line"></i></div>
+            </div>
+        </div>
+
+        <div class="goalsec">
+            <div class="goalbox left-side">
+                <h1>Daily Goals --</h1>
+                <div class="cls" id="goalClose">
+                    <i class="ri-close-line"></i>
+                </div>
+
+                <div class="goal-inp-box">
+                    <input type="text" id="goalInput" placeholder="Write today's goal...">
+                    <button id="goalAddBtn">Add Goal</button>
+                </div>
+
+                <div class="goallst">
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dyimgbox">
+            <img id="dynImage" src="./assets/bb0ebb57dcb560c6eb0b39b89cdcb450 copy.png" alt="Day Night Image">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
